@@ -23,6 +23,5 @@ function isMAC48Address(inputString) {
   return isEqual
 }
 
-console.log(isMAC48Address('Z1-1B-63-84-45-E6'))
 
 module.exports = isMAC48Address;
