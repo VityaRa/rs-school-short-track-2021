@@ -20,8 +20,22 @@
  * }
  *
  */
-function getDNSStats(/* domains */) {
-  throw new Error('Not implemented');
+function getDNSStats(domains) {
+  const dns = {}
+  domains.forEach(domain => {
+    domain = domain.split('.').reverse().join('.')
+    while (domain) {
+      dns[`.${domain}`] = Object.keys(dns).includes(`.${domain}`) ? dns[`.${domain}`] + 1 : 1
+      domain = domain.split('.')
+      domain.pop()
+      domain = domain.join('.')
+    }
+  })
+  return dns
 }
-
+getDNSStats([
+    'code.yandex.ru',
+    'music.yandex.ru',
+    'yandex.ru'
+   ])
 module.exports = getDNSStats;
