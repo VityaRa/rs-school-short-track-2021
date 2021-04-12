@@ -13,15 +13,14 @@
  *
  */
 function isMAC48Address(inputString) {
-  let check = /[0-9A-Fa-f]/g,
-      isEqual = true
-  inputString.split('-').forEach(elem => {
+  const check = /[0-9A-Fa-f]/g;
+  let isEqual = true;
+  inputString.split('-').forEach((elem) => {
     if (elem !== elem.match(check).join('')) {
-      isEqual = false
+      isEqual = false;
     }
-  })
-  return isEqual
+  });
+  return isEqual;
 }
-
 
 module.exports = isMAC48Address;

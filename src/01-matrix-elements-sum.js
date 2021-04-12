@@ -15,19 +15,18 @@
  * The result should be 9
  */
 function getMatrixElementsSum(matrix) {
-  let res = 0,
-      zeroArray = new Set()
-  matrix.forEach(row => {
+  let res = 0;
+  const zeroArray = new Set();
+  matrix.forEach((row) => {
     row.forEach((elem, index) => {
       if (zeroArray.has(index) || elem === 0) {
-        zeroArray.add(index)
-        return
+        zeroArray.add(index);
+        return;
       }
-      res += elem
-    })
+      res += elem;
+    });
   });
   return res;
 }
-
 
 module.exports = getMatrixElementsSum;

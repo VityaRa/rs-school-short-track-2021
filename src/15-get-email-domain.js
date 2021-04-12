@@ -9,6 +9,6 @@
  *
  */
 function getEmailDomain(email) {
-  return email.split('@').slice(-1)[0]
+  return email.split('@').slice(-1)[0];
 }
 module.exports = getEmailDomain;

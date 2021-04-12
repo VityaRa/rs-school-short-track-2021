@@ -10,16 +10,13 @@
  *
  */
 function deleteDigit(number) {
-  let max = -1,
-      current = 0
+  let max = -1;
   number.toString().split('').forEach((digit, index, array) => {
-    if ((current = parseInt(array.filter((elem, ind) => ind !== index).join(''))) > max)
-      max = current
-    
-    
-  })
-  return max
+    if (parseInt(array.filter((elem, ind) => ind !== index).join(''), 10) > max) {
+      max = parseInt(array.filter((elem, ind) => ind !== index).join(''), 10);
+    }
+  });
+  return max;
 }
-
 
 module.exports = deleteDigit;

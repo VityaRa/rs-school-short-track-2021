@@ -21,7 +21,7 @@
  *  [1, 1, 1]
  * ]
  */
- function minesweeper(matrix) {
+function minesweeper(matrix) {
   const newMatrix = [];
   for (let i = 0; i < matrix.length; i++) {
     const currentStr = [];
