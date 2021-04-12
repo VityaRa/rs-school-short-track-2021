@@ -21,8 +21,63 @@
  *  [1, 1, 1]
  * ]
  */
-function minesweeper(/* matrix */) {
-  throw new Error('Not implemented');
+ function minesweeper(matrix) {
+  const newMatrix = [];
+  for (let i = 0; i < matrix.length; i++) {
+    const currentStr = [];
+    for (let j = 0; j < matrix[i].length; j++) {
+      currentStr.push(0);
+    }
+    newMatrix.push(currentStr);
+  }
+  for (let i = 0; i < matrix.length; i++) {
+    const str = matrix[i];
+    for (let j = 0; j < str.length; j++) {
+      if (str[j] === true) {
+        if (typeof (matrix[i][j - 1]) !== 'undefined') {
+          if (typeof (matrix[i][j - 1]) !== 'undefined') {
+            newMatrix[i][j - 1] += 1;
+          }
+        }
+        if (typeof (matrix[i][j + 1]) !== 'undefined') {
+          if (typeof (matrix[i][j + 1]) !== 'undefined') {
+            newMatrix[i][j + 1] += 1;
+          }
+        }
+        if (typeof (matrix[i - 1]) !== 'undefined') {
+          if (typeof (matrix[i - 1][j]) !== 'undefined') {
+            newMatrix[i - 1][j] += 1;
+          }
+        }
+        if (typeof (matrix[i + 1]) !== 'undefined') {
+          if (typeof (matrix[i + 1][j]) !== 'undefined') {
+            newMatrix[i + 1][j] += 1;
+          }
+        }
+        if (typeof (matrix[i - 1]) !== 'undefined') {
+          if (typeof (matrix[i - 1][j - 1]) !== 'undefined') {
+            newMatrix[i - 1][j - 1] += 1;
+          }
+        }
+        if (typeof (matrix[i - 1]) !== 'undefined') {
+          if (typeof (matrix[i - 1][j + 1]) !== 'undefined') {
+            newMatrix[i - 1][j + 1] += 1;
+          }
+        }
+        if (typeof (matrix[i + 1]) !== 'undefined') {
+          if (typeof (matrix[i + 1][j - 1]) !== 'undefined') {
+            newMatrix[i + 1][j - 1] += 1;
+          }
+        }
+        if (typeof (matrix[i + 1]) !== 'undefined') {
+          if (typeof (matrix[i + 1][j + 1]) !== 'undefined') {
+            newMatrix[i + 1][j + 1] += 1;
+          }
+        }
+      }
+    }
+  }
+  return newMatrix;
 }
 
 module.exports = minesweeper;
